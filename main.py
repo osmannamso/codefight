@@ -27,9 +27,9 @@ def send_text(message):
         try:
             words = message.text.split(' ')
             if len(words) > 0:
-                # evening = datetime.combine(date.today(), time(19, 20))
+                evening = datetime.combine(date.today(), time(23, 45))
 
-                # pause.until(evening)
+                pause.until(evening)
                 url = words[1]
                 results = parse(url)
                 bot.send_message(message.chat.id, results)
