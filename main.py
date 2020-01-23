@@ -1,6 +1,4 @@
 import telebot
-from datetime import datetime, date, time
-import pause
 from time import sleep
 from parse import parse
 
@@ -21,15 +19,10 @@ def send_text(message):
     elif '/fight' in message.text.lower():
         bot.send_message(message.chat.id, 'geeks, ehhh, you could do something else\n')
         sleep(1)
-        bot.send_message(message.chat.id, 'ok, then. I will chat you at 19:20')
-        sleep(1)
-        bot.send_message(message.chat.id, 'let the codefight begin!')
+        bot.send_message(message.chat.id, 'want to know results?')
         try:
             words = message.text.split(' ')
             if len(words) > 0:
-                evening = datetime.combine(date.today(), time(23, 45))
-
-                pause.until(evening)
                 url = words[1]
                 results = parse(url)
                 bot.send_message(message.chat.id, results)
